@@ -26,7 +26,7 @@ async function printReport() {
 async function consume() {
     //TODO: Constuir a comunicação com a fila 
     await (await RabbitMQService.getInstance()).consume(process.env.RABBITMQ_QUEUE_NAME, (val) => {updateReport(val)});
-    await printReport();
+    printReport();
 } 
 
 consume()
